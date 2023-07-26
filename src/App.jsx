@@ -29,7 +29,9 @@ function App() {
       <Container className="text-center my-5">
         <img src={logo} alt="Logo de los simpson" className="w-50" />
         <Frase datoPersonaje={personaje}></Frase>
-        <Button variant="warning">Obtener frase</Button>
+        <Button variant="warning" onClick={consultarApi}>
+          Obtener frase
+        </Button>
       </Container>
     </>
   );
