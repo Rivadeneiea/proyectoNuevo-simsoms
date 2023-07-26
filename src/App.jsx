@@ -11,9 +11,14 @@ function App() {
   useEffect(() => {
     consultarApi();
   }, []);
-  const consultarApi = () => {
+  const consultarApi = async () => {
     try {
-      const respuesta = fetch("https://thesimpsonsquoteapi.glitch.me/quotes");
+      const respuesta = await fetch(
+        "https://thesimpsonsquoteapi.glitch.me/quotes"
+      );
+      const dato = await respuesta.json();
+      console.log(dato[0]);
+      setPersonaje(dato[0]);
     } catch (error) {
       console.log(error);
       // dejar un msj intuitivo para el usuario
